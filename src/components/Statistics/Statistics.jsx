@@ -20,7 +20,8 @@ export function Statistics({ title, stats }) {
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    percentage: PropTypes.number,
-  })),
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
+  })).isRequired,
 }

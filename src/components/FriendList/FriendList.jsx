@@ -4,21 +4,21 @@ import { FriendListStyled } from './FriendList.styled'
 
 export function FriendList({ friends }) {
   return <FriendListStyled className="friend-list">
-    {friends.map(friend => {
+    {friends.map(({avatar, isOnline, id, name}) => {
       return <FriendListItem
-        avatar={friend.avatar}
-        isOnline={friend.isOnline}
-        key={friend.id}
-        name={friend.name} />
+        avatar={avatar}
+        isOnline={isOnline}
+        key={id}
+        name={name} />
     })}
 </FriendListStyled>
 }
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(PropTypes.shape({
-    avatar: PropTypes.string,
-    key: PropTypes.string,
-    name: PropTypes.string,
-    isOnline: PropTypes.bool,
-  }))
+    avatar: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  })).isRequired
 }
