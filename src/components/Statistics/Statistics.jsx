@@ -7,10 +7,10 @@ export function Statistics({ title, stats }) {
   {title && <Title>{title}</Title>}
 
     <StatList>
-      {stats.map(stat => {
-        return <StatItem key={stat.id}>
-          <span>{stat.label}</span>
-          <span> {stat.percentage}%</span>
+      {stats.map(({id, label, percentage}) => {
+        return <StatItem key={id}>
+          <span>{label}</span>
+          <span> {percentage}%</span>
         </StatItem>
       })}
     </StatList>

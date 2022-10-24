@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   padding: 30px;
-  width: 250px;
+  width: 350px;
   background-color: #ebe9e9;
 `
 
@@ -17,8 +17,10 @@ export const StatList = styled.ul`
   display: flex;
 `
 export const StatItem = styled.li`
-  padding: 20px 10px;
-  background-color: ${colorRandomizer()};
+  padding: 15px;
+  background-color: ${colorRandomizer};
+  width: 15%;
+
 `
 
 function colorRandomizer() {
